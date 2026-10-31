@@ -1,7 +1,7 @@
 /* Подпискомат: базовые стили. Разметка страниц использует inline-стили из макета,
    здесь только то, что inline не умеет: анимация, состояния, мобильная версия. */
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #F5F7FB; }
+body { margin: 0; background: #F5F7FB; overflow-x: clip; }
 a { color: #1844D8; }
 a:hover { color: #0B1B3F; }
 img { max-width: 100%; }
