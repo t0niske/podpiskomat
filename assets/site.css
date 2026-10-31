@@ -1,0 +1,30 @@
+/* Подпискомат: базовые стили. Разметка страниц использует inline-стили из макета,
+   здесь только то, что inline не умеет: анимация, состояния, мобильная версия. */
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #F5F7FB; }
+a { color: #1844D8; }
+a:hover { color: #0B1B3F; }
+img { max-width: 100%; }
+:focus-visible { outline: 3px solid #FFD23F; outline-offset: 2px; }
+
+@keyframes pk-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.pk-faq summary { list-style: none; }
+.pk-faq summary::-webkit-details-marker { display: none; }
+.pk-faq[open] summary span { transform: rotate(45deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .pk-marquee { animation: none !important; }
+}
+
+@media (max-width: 720px) {
+  .pk-panel { padding: 36px 20px !important; border-radius: 24px !important; }
+  .pk-h1 { font-size: 1.55rem !important; }
+  .pk-h2 { font-size: 1.5rem !important; }
+  .pk-h2s { font-size: 1.35rem !important; }
+  .pk-nav { display: none !important; }
+  .pk-collage { min-height: 320px !important; }
+  [style*="auto-fit"] { grid-template-columns: 1fr !important; }
+  [style*="translateX"] { transform: rotate(-3deg) !important; }
+}
