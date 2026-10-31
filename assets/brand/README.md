@@ -3,3 +3,4 @@
 - yandex-music.svg — File:Yandex_Music_logo_2023.svg
 - yandex-music-icon.svg — File:Yandex_Music_icon.svg
 - alisa.svg — File:Alisa_Yandex.svg
+- yandex-plus.svg — файл владельца сайта (знак Яндекс Плюса)

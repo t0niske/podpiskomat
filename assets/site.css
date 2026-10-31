@@ -261,6 +261,7 @@ dialog::backdrop { background: rgba(11,27,63,.55); }
 
 /* Метки продуктов Яндекса: градиент Плюса только как акцент, логотипы — только у своего продукта */
 .chip-plus { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; background: var(--white); color: var(--ink); font-weight: 800; font-size: 13px; letter-spacing: .02em; white-space: nowrap; border: 2px solid transparent; background: linear-gradient(var(--white), var(--white)) padding-box, var(--plus-grad) border-box; }
+.chip-plus img { width: 22px; height: 22px; display: block; }
 .chip-plus i { width: 22px; height: 22px; border-radius: 999px; background: var(--plus-grad); color: var(--white); display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: 16px; line-height: 1; }
 .brands { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .brand { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-weight: 800; font-size: 14px; color: var(--ink); }
