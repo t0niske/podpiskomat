@@ -1,6 +1,7 @@
 /* Подпискомат — дизайн-система. Приёмы референса region.artmasters.ru, палитра «Кобальт и солнце». */
 :root {
   --blue: #1844D8; --blue-2: #1D3BBF; --ink: #0B1B3F; --ink-2: #16295A; --sun: #FFD23F; --sun-soft: #FFF1C2;
+  --plus-grad: linear-gradient(100deg, #FF5C4D 0%, #EB469F 38%, #8341EF 72%, #3F68F9 100%);
   --sky: #3ABEFF; --green: #00A878; --green-soft: #D3F4E8; --bg: #F5F7FB; --panel: #EEF2FF; --line: #DDE3EF;
   --muted: #4A5578; --soft: #D6E0FF; --white: #FFFFFF; --err: #C2362F;
   --r-xl: 32px; --r-l: 24px; --r-m: 16px;
@@ -257,3 +258,20 @@ dialog::backdrop { background: rgba(11,27,63,.55); }
   .tool, .quiz { padding: 22px; }
   .marquee__track { font-size: 15px; }
 }
+
+/* Метки продуктов Яндекса: градиент Плюса только как акцент, логотипы — только у своего продукта */
+.chip-plus { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; background: var(--white); color: var(--ink); font-weight: 800; font-size: 13px; letter-spacing: .02em; white-space: nowrap; border: 2px solid transparent; background: linear-gradient(var(--white), var(--white)) padding-box, var(--plus-grad) border-box; }
+.chip-plus i { width: 22px; height: 22px; border-radius: 999px; background: var(--plus-grad); color: var(--white); display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: 16px; line-height: 1; }
+.brands { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.brand { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-weight: 800; font-size: 14px; color: var(--ink); }
+.brand img { display: block; }
+.brand--ink { background: #121212; border-color: #121212; color: var(--white); padding: 10px 16px; }
+.brand--ink img[width="184"] { height: 18px; width: auto; }
+.brand-ico { width: 40px; height: 40px; }
+.plus-ring { border: 2px solid transparent; background: linear-gradient(var(--bg), var(--bg)) padding-box, var(--plus-grad) border-box; }
+.card--white.plus-ring { background: linear-gradient(var(--white), var(--white)) padding-box, var(--plus-grad) border-box; }
+.plus-line { height: 6px; border-radius: 999px; background: var(--plus-grad); width: 100%; }
+.panel--plus { position: relative; overflow: hidden; }
+.panel--plus::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 8px; background: var(--plus-grad); }
+.trademark { font-size: 12px; color: var(--muted); }
+.panel--blue .trademark, .panel--ink .trademark { color: var(--soft); }
