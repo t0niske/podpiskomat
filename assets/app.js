@@ -23,6 +23,17 @@
     });
   }
 
+  /* Липкая кнопка: не показываем, пока виден первый экран (там своя кнопка) или подвал */
+  var sticky = $('.sticky-buy');
+  if (sticky && 'IntersectionObserver' in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { seen[e.target.className] = e.isIntersecting; });
+      sticky.classList.toggle('is-off', Object.keys(seen).some(function (k) { return seen[k]; }));
+    });
+    [$('.hero'), $('.ftr')].forEach(function (el) { if (el) io.observe(el); });
+  }
+
   /* Окно заказа: оплату подключает владелец, здесь только выбранный вариант */
   var dlg = $('#order');
   document.addEventListener('click', function (e) {
