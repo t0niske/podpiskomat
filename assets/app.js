@@ -62,7 +62,7 @@
       o('pm', nf(price / m));
       o('off', nf(off));
       o('save', save > 50 ? nf(save) + ' (−' + Math.round(save * 100 / off) + '%)' : 'как у Яндекса, но без карты и автопродления');
-      o('until', until.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }));
+      o('until', until.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).replace(/\s(?=г\.$)/, ' '));
       if (buy) { buy.setAttribute('data-buy', 'Промокод Яндекс Плюс на ' + m + ' ' + plural(Number(m))); buy.setAttribute('data-price', nf(price)); }
     };
     $$('[data-m]', box).forEach(function (b) {
@@ -152,7 +152,7 @@
       var q = list[i];
       res.hidden = true; opts.hidden = false; qEl.hidden = false;
       qEl.textContent = q.q;
-      bar.style.width = Math.round(i * 100 / list.length) + '%';
+      bar.style.transform = 'scaleX(' + (i / list.length).toFixed(3) + ')';
       opts.innerHTML = '';
       q.a.forEach(function (a) {
         var b = document.createElement('button');
@@ -163,7 +163,7 @@
       back.hidden = i === 0;
     };
     var result = function () {
-      bar.style.width = '100%'; opts.hidden = true; qEl.hidden = true; back.hidden = false; res.hidden = false;
+      bar.style.transform = 'scaleX(1)'; opts.hidden = true; qEl.hidden = true; back.hidden = false; res.hidden = false;
       var abroad = state.where !== 'kz';
       var long = state.who === 'family' || state['for'] === 'all';
       var term = abroad ? (long ? 36 : 12) : (long ? 12 : (state['for'] === 'station' ? 12 : 6));
